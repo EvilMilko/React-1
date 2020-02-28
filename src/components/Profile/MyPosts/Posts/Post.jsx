@@ -1,12 +1,11 @@
 import React from 'react';
 import cm from './Posts.module.css'
 
-const Post = () => {
-
+const Post = (props) => {
     return (
         <div className={cm.item}>
             <img className='img' src="https://cdn.worldvectorlogo.com/logos/github-icon.svg" alt="" />
-            post 1
+            {props.message}
             <div>
                 <span>Like</span>
             </div>
