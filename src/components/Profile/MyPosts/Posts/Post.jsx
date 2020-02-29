@@ -7,7 +7,7 @@ const Post = (props) => {
             <img className='img' src="https://cdn.worldvectorlogo.com/logos/github-icon.svg" alt="" />
             {props.message}
             <div>
-                <span>Like</span>
+                <span>{props.likescount}</span>
             </div>
         </div>
     )
