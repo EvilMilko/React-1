@@ -4,6 +4,14 @@
   }
 
   .item {
-    color: grey;
-
+    color: #01a1a1;
+    text-decoration: none;
   }
+
+  .active{
+    font-size: larger;
+    color: #007272;
+    text-decoration: none;
+  }
+
+  
