@@ -26,6 +26,10 @@ let dialogsData = [
     { id: 5, name: "Dimych5" },
 ]
 
+let dialogsElements = dialogsData // Преобразует объект в массив с компонентами 
+    .map((dialog) => <DialogItem id={dialog.id} name={dialog.name} />)
+
+
 let messagesData = [
     { id: 1, message: 'text1' },
     { id: 2, message: 'text2' },
@@ -34,22 +38,20 @@ let messagesData = [
     { id: 5, message: 'text5' },
 ]
 
+let messagesElements = messagesData
+    .map((message) => <Message id={message.id} message={message.message} />)
+
 const Dialogs = (props) => {
     return (
         <div>
             <div className={cm.dialogs}>
-
+                {/* Контакты в диалогах */}
                 <div className={cm.dialogsItems}>
-                    <DialogItem id={dialogsData[0].id} name={dialogsData[0].name} />
-                    <DialogItem id={dialogsData[1].id} name={dialogsData[1].name} />
-
+                    {dialogsElements}   {/* выводим весь массив с компонентами */}
                 </div>
-
+                {/* Окно диалога */}
                 <div className={cm.messages}>
-                    <Message id={messagesData[0].id} message={messagesData[0].message} />
-                    <Message id={messagesData[1].id} message={messagesData[1].message} />
-
-
+                    {messagesElements}
                 </div>
 
             </div>
