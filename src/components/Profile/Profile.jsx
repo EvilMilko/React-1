@@ -1,17 +1,15 @@
 import React from 'react';
 import cm from './Profile.module.css'
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
 
     return (
-    <div>
-        <img width="100%" src="https://klike.net/uploads/posts/2019-06/1561182942_2.jpg" />
         <div>
-            ava
+            <ProfileInfo />
+            <MyPosts />
         </div>
-        <MyPosts/>
-    </div>
     )
 
 }

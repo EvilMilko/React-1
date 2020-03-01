@@ -7,9 +7,14 @@ const MyPosts = () => {
 
     return (
         <div>
-            my posts
+            <div className={cm.postsBlock}>
+                <h2>my posts</h2>
+            </div>
             <div>
-                new post
+                <div className={cm.newPost}>
+                    <textarea></textarea>
+                    <button>+</button>
+                </div>
             </div>
 
             <div className={cm.posts}>
