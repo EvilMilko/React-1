@@ -2,15 +2,10 @@ import React from 'react';
 import cm from './MyPosts.module.css'
 import Post from './Posts/Post';
 
-let postsData = [
-    { id: 1, message: "First post", likescount: 5 },
-    { id: 2, message: "Bleat", likescount: 1 },
-]
+const MyPosts = (props) => {
 
-let postsElements = postsData // Преобразует объект в массив с компонентами 
-    .map((post) => <Post likescount={post.likescount} message={post.message} />)
-
-const MyPosts = () => {
+    let postsElements = // Преобразует объект в массив с компонентами 
+        props.posts.map((post) => <Post likescount={post.likescount} message={post.message} />)
 
     return (
         <div>
