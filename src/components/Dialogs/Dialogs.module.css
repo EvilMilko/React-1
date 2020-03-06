@@ -9,23 +9,57 @@
 }
 
 .dialogsItems .active{
-    font-size: larger;
     color: #007272;
+    font-size: large;
+
 }
+
+.dialog {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 60px 150px;
+    grid-gap: 10px;
+}
+.dialog a {
+    color: #01a1a1;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: clip;
+    padding-top: 17px;
+}
+
+.dialogs a.active{
+    color:#007272
+}
+
+.dialog img {
+    width: 60px;
+    border-radius: 999;
+}
+
 
 .messages{
     padding: 10px;
 
 }
-
-.dialog {
+.messages hr {
     color: #007272;
-    text-decoration: none;
-
+    border-color: #007272;
+}
+.messages .head {
+    color: #007272;
+    font-size: larger;
+    text-align: center;
+}
+.message{
+    padding-bottom: 10px ;
 }
 
+.message img{
+    width: 30px;
+    border-radius: 999;
+}
 
-
-
-
-
+.message span{
+    padding: 10px ;
+}

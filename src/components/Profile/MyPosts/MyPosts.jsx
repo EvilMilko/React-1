@@ -3,7 +3,6 @@ import cm from './MyPosts.module.css'
 import Post from './Posts/Post';
 
 const MyPosts = (props) => {
-
     let postsElements = // Преобразует объект в массив с компонентами 
         props.posts.map((post) => <Post likescount={post.likescount} message={post.message} />)
 
