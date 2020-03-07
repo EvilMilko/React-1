@@ -19,13 +19,10 @@
     grid-template-rows: 60px 1fr;
     grid-template-columns: 60px 150px;
     grid-gap: 10px;
-}
-.dialog a {
     color: #01a1a1;
     text-decoration: none;
     overflow: hidden;
     text-overflow: clip;
-    padding-top: 17px;
 }
 
 .dialogs a.active{
@@ -37,6 +34,9 @@
     border-radius: 999;
 }
 
+a div{
+    padding-top: 17px;
+}
 
 .messages{
     padding: 10px;
