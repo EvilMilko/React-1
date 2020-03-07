@@ -1,0 +1,8 @@
+.frends {
+    display: grid;
+    grid-template-columns: 75px 75px;
+    grid-template-rows: 3fr 3fr;
+    grid-gap: 10px;
+    
+
+}

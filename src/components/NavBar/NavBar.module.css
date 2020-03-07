@@ -1,11 +1,13 @@
 .nav {
     grid-area: n;
     background-color: azure;
+  
   }
 
   .item {
     color: #01a1a1;
     text-decoration: none;
+    padding-left: 10px;
   }
 
   .active{
@@ -14,4 +16,7 @@
     text-decoration: none;
   }
 
-  
+  hr {
+    color: #007272;
+    border-color: #007272;
+}

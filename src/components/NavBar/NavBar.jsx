@@ -2,7 +2,8 @@ import React from 'react';
 
 import cm from './NavBar.module.css'
 import { NavLink } from 'react-router-dom';
-const NavBar = () => {
+import SideBar from './SideBar/SideBar';
+const NavBar = (props) => {
 
     return (
         <nav className={cm.nav}>
@@ -21,6 +22,8 @@ const NavBar = () => {
             <div>
                 <NavLink className={cm.item} activeClassName={cm.active} to="/settings">Settings</NavLink>
             </div>
+            <hr></hr>
+            <SideBar state={props.state.sideBar}/>
         </nav>
 
     )

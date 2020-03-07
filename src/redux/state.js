@@ -27,8 +27,18 @@ let state = {
             { id: 4, message: 'text4' },
             { id: 5, message: 'text5' },
         ]
-    }
+    },
 
+    navBar: {
+        sideBar: [
+            { id: 1, name: "12313"},
+            { id: 2, name: "Dimych22222"},
+            { id: 3, name: "Dimych3"},
+            { id: 4, name: "Dimych4"},
+            { id: 5, name: "Dimych5"},
+        ]
+    }
+        
 
 }
 
