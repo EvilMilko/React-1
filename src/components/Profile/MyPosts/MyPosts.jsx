@@ -6,6 +6,14 @@ const MyPosts = (props) => {
     let postsElements = // Преобразует объект в массив с компонентами 
         props.posts.map((post) => <Post likescount={post.likescount} message={post.message} />)
 
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+        newPostElement.current.value= '';
+    }
+
     return (
         <div>
             <div className={cm.postsBlock}>
@@ -14,8 +22,8 @@ const MyPosts = (props) => {
             <div>
                 {/* Добавление нового поста */}
                 <div className={cm.newPost}>
-                    <textarea></textarea>
-                    <button>+</button>
+                    <textarea ref={newPostElement}></textarea>
+                    <button onClick={addPost}>+</button>
                 </div>
             </div>
             {/* Вывод весх постов */}

@@ -1,0 +1,28 @@
+.newMessage textarea{
+    height: 16px;
+    resize: none;
+    padding: 15px;
+    border-radius: 999px;
+    border-color: #53a1a1;
+    border-style: solid;
+}
+
+.newMessage button{
+    height: 50px;
+    width: 50px;
+    border: 0;
+    border-radius: 999px;
+    background-color: #53a1a1;
+    margin-left: 5px;
+    color: azure;
+    font-size: larger;
+}
+.newMessage button:hover{
+    background-color: #498b8b;
+}
+
+.newMessage{
+    display: grid;
+    grid-template-columns: 99fr 1fr;
+  
+  }

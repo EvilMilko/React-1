@@ -1,0 +1,25 @@
+.dialog {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 60px 150px;
+    grid-gap: 10px;
+    color: #01a1a1;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.dialog img {
+    width: 60px;
+    border-radius: 999;
+}
+
+a div{
+    padding-top: 17px;
+}
+
+.active{
+    color: #007272;
+    font-size: large;
+
+}

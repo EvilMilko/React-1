@@ -30,7 +30,7 @@ let state = {
     },
 
     navBar: {
-        sideBar: [
+        sideBarData: [
             { id: 1, name: "12313"},
             { id: 2, name: "Dimych22222"},
             { id: 3, name: "Dimych3"},

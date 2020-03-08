@@ -23,7 +23,7 @@ const NavBar = (props) => {
                 <NavLink className={cm.item} activeClassName={cm.active} to="/settings">Settings</NavLink>
             </div>
             <hr></hr>
-            <SideBar state={props.state.sideBar}/>
+            <SideBar state={props.state.sideBarData}/>
         </nav>
 
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import cm from './../Dialogs.module.css'
+import cm from './Message.module.css'
+
 
 const Message = (props) => {
     return (

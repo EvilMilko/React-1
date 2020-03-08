@@ -4,7 +4,7 @@ import Frend from './Frends/Frend';
 
 
 const SideBar = (props) => {
-
+    
     let frends = props.state // Преобразует объект в массив с компонентами 
         .map((frend) => <Frend name={frend.name}/>)
 
