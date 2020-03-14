@@ -5,6 +5,8 @@ import NewPost from './NewPost/NewPost';
 
 
 const MyPosts = (props) => {
+
+
     let postsElements = // Преобразует объект в массив с компонентами 
         props.posts.map((post) => <Post likescount={post.likescount} message={post.message} />)
 
@@ -15,7 +17,7 @@ const MyPosts = (props) => {
             </div>
             <div>
             {/* Добавление нового поста */}
-                <NewPost/>
+                <NewPost updateNewPostText={props.updateNewPostText} newPostTextData={props.newPostTextData} addPost={props.addPost}/>
             </div>
             {/* Вывод весх постов */}
             <div className={cm.posts}>

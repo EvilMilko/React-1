@@ -1,4 +1,4 @@
-import { logRoles } from "@testing-library/react"
+import { rerenderEntireTree } from "../render";
 
 let state = {
 
@@ -8,6 +8,8 @@ let state = {
             { id: 1, message: "First post", likescount: 5 },
 
         ],
+
+        newPostTextData: 'Текст Текст Текст Текст Текст'
 
     },
 
@@ -31,15 +33,33 @@ let state = {
 
     navBar: {
         sideBarData: [
-            { id: 1, name: "12313"},
-            { id: 2, name: "Dimych22222"},
-            { id: 3, name: "Dimych3"},
-            { id: 4, name: "Dimych4"},
-            { id: 5, name: "Dimych5"},
+            { id: 1, name: "12313" },
+            { id: 2, name: "Dimych22222" },
+            { id: 3, name: "Dimych3" },
+            { id: 4, name: "Dimych4" },
+            { id: 5, name: "Dimych5" },
         ]
     }
-        
 
+    
+
+
+}
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 5,
+        message: state.profilePage.newPostTextData,
+        likescount: 0
+    };
+    updateNewPostText('');
+    state.profilePage.postsData.push(newPost);
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostTextData = newText;
+    rerenderEntireTree(state);
 }
 
 export default state

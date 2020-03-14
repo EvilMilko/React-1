@@ -1,13 +1,11 @@
 .message{
+    display: grid;
+    grid-template-columns: 40px 1fr;
     padding-bottom: 10px ;
+
 }
 
 .message img{
     width: 30px;
     border-radius: 999;
 }
-
-.message span{
-    padding: 10px ;
-}
-

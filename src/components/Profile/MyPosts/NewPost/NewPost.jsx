@@ -7,14 +7,23 @@ const NewPost = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text);
-        newPostElement.current.value = '';
+        if (text !='') {
+            props.addPost(text);
+            
+        }else
+        alert('Введите текст!')
+        
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
     }
 
     return (
 
         <div className={cm.newPost}>
-            <textarea ref={newPostElement}></textarea>
+            <textarea value={props.newPostTextData} onChange={onPostChange} ref={newPostElement}/>
             <button onClick={addPost}>+</button>
         </div>
 
