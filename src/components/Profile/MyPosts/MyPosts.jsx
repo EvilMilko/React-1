@@ -17,7 +17,7 @@ const MyPosts = (props) => {
             </div>
             <div>
             {/* Добавление нового поста */}
-                <NewPost updateNewPostText={props.updateNewPostText} newPostTextData={props.newPostTextData} addPost={props.addPost}/>
+                <NewPost dispatch={props.dispatch} addPost={props.addPost}/>
             </div>
             {/* Вывод весх постов */}
             <div className={cm.posts}>

@@ -8,21 +8,20 @@ import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const App = (props) => {
 
   return (
-    <BrowserRouter>
+    
       <div className="app-wrapper" >
         <Header />
         <NavBar state={props.state.navBar} />
 
         <div className='app-wrapper-content'>
           <Route path="/profile" render={() => <Profile
-            addPost={props.addPost}
+            dispatch={props.dispatch}
             profilePage={props.state.profilePage}
-            updateNewPostText={props.updateNewPostText}
           />} />
           <Route path="/dialogs" render={() => <Dialogs
             state={props.state.dialogsPage}
@@ -33,7 +32,7 @@ const App = (props) => {
 
         </div>
       </div>
-    </BrowserRouter>
+
 
   );
 
