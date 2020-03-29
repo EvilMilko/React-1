@@ -1,5 +1,6 @@
 import React from 'react';
 import cm from './NewPost.module.css'
+import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../../redux/state';
 
 const NewPost = (props) => {
 
@@ -7,25 +8,23 @@ const NewPost = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value;
-        if (text !='') {
-            let action = {type: "ADD-POST"}
-            props.dispatch(action);
-            
-        }else
-        alert('Введите текст!')
-        
+        if (text != '') {
+      
+            props.dispatch(addPostActionCreator());
+        } else
+            alert('Введите текст!')
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        let action = {type: "UPDATE-NEW-POST-TEXT", newText: text}
-        props.dispatch(action);
+        
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
 
         <div className={cm.newPost}>
-            <textarea value={props.newPostTextData} onChange={onPostChange} ref={newPostElement}/>
+            <textarea value={props.newPostTextData} onChange={onPostChange} ref={newPostElement} />
             <button onClick={addPost}>+</button>
         </div>
 
