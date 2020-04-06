@@ -11,14 +11,13 @@ const Dialogs = (props) => {
     let messagesElements = props.state.messagesData
         .map((message) => <Message id={message.id} message={message.message} />)
 
-    let newMessageElement = React.createRef();
-
+    // let newMessageElement = React.createRef();
     return (
         <div>
             <div className={cm.dialogs}>
                 {/* Контакты в диалогах */}
                 <div className={cm.dialogsItems} >
-                    {dialogsElements}   {/* выводим весь массив с компонентами */}
+                    {dialogsElements}   {/* выводим весь массив с пользователям */}
                 </div>
                 {/* Окно диалога */}
                 <div className={cm.messages}>
@@ -26,7 +25,10 @@ const Dialogs = (props) => {
                     <hr></hr>
                     {messagesElements}
 
-                    <NewMessage />
+                    <NewMessage
+                        newMessageTextData={props.state.newMessageTextData}
+                        dispatch={props.dispatch}
+                    />
                 </div>
 
             </div>

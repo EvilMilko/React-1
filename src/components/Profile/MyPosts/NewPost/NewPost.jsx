@@ -4,32 +4,24 @@ import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../.
 
 const NewPost = (props) => {
 
-    let newPostElement = React.createRef();
-
     let addPost = () => {
-        let text = newPostElement.current.value;
-        if (text != '') {
-      
-            props.dispatch(addPostActionCreator());
-        } else
-            alert('Введите текст!')
+        props.dispatch(addPostActionCreator());
     }
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        
+    let onPostChange = (event) => {
+        let text = event.target.value;
         props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return (
 
         <div className={cm.newPost}>
-            <textarea value={props.newPostTextData} onChange={onPostChange} ref={newPostElement} />
+            <textarea value={props.newPostTextData}
+                onChange={onPostChange}/>
             <button onClick={addPost}>+</button>
         </div>
 
     )
-
 }
 
 export default NewPost;

@@ -1,20 +1,23 @@
 import React from 'react';
 import cm from './NewMessage.module.css'
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../../redux/state';
 
 const newMessage = (props) => {
 
-    let newMessageElement = React.createRef();
-
     let addMessage = () => {
-        let text = newMessageElement.current.value;
-        alert(text);
-        newMessageElement.current.value = '';
+        props.dispatch(addMessageActionCreator());
     }
 
-    return (
+    let onMessageChange = (event) => {
+        let text = event.target.value;
+        props.dispatch(updateNewMessageTextActionCreator(text));
+    }
 
+
+    return (
         <div className={cm.newMessage}>
-            <textarea ref={newMessageElement}></textarea>
+            <textarea value={props.newMessageTextData}
+                onChange={onMessageChange}/>
             <button onClick={addMessage}>+</button>
         </div>
 
