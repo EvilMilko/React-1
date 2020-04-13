@@ -1,10 +1,6 @@
-const ADD_POST = "ADD-POST"
-
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
-
-const ADD_MESSAGE = "ADD-MESSAGE"
-
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT"
+import navBarReducer from "./navBarReducer";
+import dialogsPageReducer from "./dialogsPageReducer";
+import profilePageReducer from "./profilePageReducer";
 
 let store = {
 
@@ -69,78 +65,13 @@ let store = {
 
     dispatch(action) {
 
-        switch (action.type) {
-            ///Добавление поста в профиль
-            case ADD_POST:
-                if (this._state.profilePage.newPostTextData != '') {
-                    let newPost = {
-                        id: 5,
-                        message: this._state.profilePage.newPostTextData,
-                        likescount: 0
-                    };
-
-                    this._state.profilePage.postsData.push(newPost);
-                    this._state.profilePage.newPostTextData = "";
-                    this._callSubscriber(this._state);
-
-                } else
-                    alert('Введите текст!')
-
-                break;
-
-            case UPDATE_NEW_POST_TEXT:
-                this._state.profilePage.newPostTextData = action.newText;
-
-                this._callSubscriber(this._state);
-
-                break;
-            /////////////////////////////////////
-
-            //Отправка сообщения в диалогах
-            case ADD_MESSAGE:
-                if (this._state.dialogsPage.newMessageTextData != '') {
-                    let newMessage = {
-                        id: 6,
-                        message: this._state.dialogsPage.newMessageTextData,
-
-                    };
-                    this._state.dialogsPage.messagesData.push(newMessage);
-                    this._state.dialogsPage.newMessageTextData = "";
-                    this._callSubscriber(this._state);
-
-                } else
-                    alert('Введите текст!')
-                break;
-
-            case UPDATE_NEW_MESSAGE_TEXT:
-                this._state.dialogsPage.newMessageTextData = action.newText;
-
-                this._callSubscriber(this._state);
-
-                break;
-
-
-            /////////////////////////////////////
-        }
+        this._state.profilePage = profilePageReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action)
+        this._state.navBar = navBarReducer(this._state.navBar, action)
+        this._callSubscriber(this._state)
     }
 
 }
-
-export const addPostActionCreator = () => ({ type: ADD_POST })
-
-export const updateNewPostTextActionCreator = (text) =>
-    ({
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text
-    })
-
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
-
-export const updateNewMessageTextActionCreator = (text) =>
-    ({
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        newText: text
-    })
 
 export default store
 
